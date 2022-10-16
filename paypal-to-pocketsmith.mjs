@@ -4,7 +4,7 @@ import csv from 'async-csv';
 
 const filename = process.argv[2];
 const csvString = fs.readFileSync(filename);
-const rows = (await csv.parse(csvString, {columns:true}))
+const rows = (await csv.parse(csvString, {columns:true}));
 rows.shift();
 const validRows = rows.filter(row => row.Fee !== '');
 const csvArray = validRows.map(row => {
@@ -13,4 +13,4 @@ const csvArray = validRows.map(row => {
     const net = row.Net.replace(/ /g, '').replace(',00', '');
     return [row.Date, nameType, net];
 });
-console.log(await csv.stringify(csvArray))
+console.log(await csv.stringify(csvArray));
