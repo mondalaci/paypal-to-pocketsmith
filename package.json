@@ -1,0 +1,22 @@
+{
+  "name": "paypal-to-pocketsmith",
+  "version": "1.0.0",
+  "description": "Script to convert PayPal CSV export for PocketSmith.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mondalaci/paypal-to-pocketsmith.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mondalaci/paypal-to-pocketsmith/issues"
+  },
+  "homepage": "https://github.com/mondalaci/paypal-to-pocketsmith#readme",
+  "dependencies": {
+    "async-csv": "^2.1.3"
+  }
+}
