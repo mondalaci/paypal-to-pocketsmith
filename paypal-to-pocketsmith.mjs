@@ -8,7 +8,9 @@ const rows = (await csv.parse(csvString, {columns:true}))
 rows.shift();
 const validRows = rows.filter(row => row.Fee !== '');
 const csvArray = validRows.map(row => {
-    const nameType = row.Name ? `${row.Name} | ${row.Type}` : row.Type;
-    return [row.Date, nameType, row.Net];
+    const name = row.Name || row['Item Title'];
+    const nameType = name ? `${name} | ${row.Type}` : row.Type;
+    const net = row.Net.replace(/ /g, '').replace(',00', '');
+    return [row.Date, nameType, net];
 });
 console.log(await csv.stringify(csvArray))
